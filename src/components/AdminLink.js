@@ -74,7 +74,7 @@ function AdminLink({ Linktext, Link, ImageURL, alt, newLink }) {
       var credentials = btoa("USER:" + password);
       var auth = { Authorization: `Basic ${credentials}` };
       fetch(
-        "https://goodricke-links-api.herokuapp.com/link/" +
+        "https://goodricke-links-api.herokuapp.com/links/link/" +
           encodeURIComponent(Linktext),
         {
           method: "DELETE",

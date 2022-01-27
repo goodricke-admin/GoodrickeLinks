@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./components/Link";
+import Link from "./components/links/link";
 
 import Async from "react-async";
 
@@ -42,7 +42,7 @@ function linkCards(data) {
 }
 
 const loadLinks = () =>
-  fetch("https://goodricke-links-api.herokuapp.com/link")
+  fetch("https://goodricke-links-api.herokuapp.com/links/link")
     .then((res) => (res.ok ? res : Promise.reject(res)))
     .then((res) => res.json());
 

@@ -194,7 +194,7 @@ function Admin() {
     form.append("ImageURL", document.getElementById("ImageURL").value);
     form.append("alt", document.getElementById("ImageAlt").value);
 
-    fetch("https://goodricke-links-api.herokuapp.com/link/", {
+    fetch("https://goodricke-links-api.herokuapp.com/links/link/", {
       method: "POST",
       body: form,
       headers: auth,
@@ -245,7 +245,7 @@ function linkCards(data) {
 }
 
 const loadLinks = () =>
-  fetch("https://goodricke-links-api.herokuapp.com/link")
+  fetch("https://goodricke-links-api.herokuapp.com/links/link")
     .then((res) => (res.ok ? res : Promise.reject(res)))
     .then((res) => res.json());
 
