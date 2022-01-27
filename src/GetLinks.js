@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "./components/links/link";
+import Link from "./components/link";
 
 import Async from "react-async";
 
