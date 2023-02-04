@@ -1,5 +1,5 @@
-import { getClient } from "../../connectDB";
-import { checkPassword } from "../../adminAuth";
+import { getClient } from "../connectDB";
+import { checkPassword } from "../auth/adminAuth";
 
 export default async function handler(req, res) {
     if (!checkPassword(req.body.password)) {

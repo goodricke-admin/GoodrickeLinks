@@ -1,4 +1,4 @@
-import { checkPassword } from "../../adminAuth";
+import { checkPassword } from "./adminAuth";
 
 export default async function handler(req, res) {
     if (checkPassword(req.body.password)) {

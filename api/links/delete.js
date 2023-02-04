@@ -1,5 +1,5 @@
-import { checkPassword } from "../../adminAuth";
-import { getClient } from "../../connectDB";
+import { checkPassword } from "../auth/adminAuth";
+import { getClient } from "../connectDB";
 const { ObjectId } = require('mongodb');
 
 export default async function handler(req, res) {

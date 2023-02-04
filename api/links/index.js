@@ -1,4 +1,4 @@
-import { getClient } from "../../connectDB";
+import { getClient } from "../connectDB";
 
 export default async function handler(req, res) {
     const client = await getClient();
