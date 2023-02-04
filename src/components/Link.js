@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-function Link({ Linktext, Link, ImageURL, alt }) {
-  const [hover, setHover] = useState();
-
-  useEffect(() => {
-    if (hover) {
-      document.getElementById(Linktext).style.color = "#1f6f2e";
-    } else {
-      document.getElementById(Linktext).style.color = "black";
-    }
-  });
+function Link({ title, url, description, imageUrl, alt }) {
   return (
     <a
       style={row}
-      href={Link}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      href={url}
     >
-      <img src={ImageURL} style={image} alt={alt} />
-      <h3 style={text} id={Linktext}>
-        {Linktext}
-      </h3>
+      <img src={imageUrl} style={image} alt={alt} />
+      <div style={textStyle}>
+        <h3 style={titleStyle}>
+          {title}
+        </h3>
+        {description && <p style={descriptionStyle}>{description}</p>}
+      </div>
     </a>
   );
 }
@@ -29,16 +21,15 @@ const row = {
   display: "flex",
   flexShrink: 1,
   flexDirection: "row",
-  height: "70px",
+  minHeight: "70px",
   width: "90%",
   maxWidth: "500px",
-  border: "1px",
-  borderStyle: "solid",
-  borderColor: "grey",
+  padding: "0.3em 0",
+  border: "2px solid var(--colour-1)",
   alignItems: "center",
   textDecoration: "none",
-  boxShadow: "3px 3px 2px #9E9E9E",
-  borderRadius: "4px",
+  boxShadow: "0 3px 8px var(--colour-1-shadow)",
+  borderRadius: "10px",
   margin: "8px",
   background: "white",
   color: "black",
@@ -47,18 +38,26 @@ const row = {
 const image = {
   height: "60px",
   width: "auto",
-  paddingInline: "4px",
+  paddingInline: "8px",
 };
 
-const text = {
+const titleStyle = {
   maxHeight: "70px",
-  flex: 1,
-  flexGrow: 1,
   fontSize: "20px",
   color: "black",
   textAlign: "center",
-  paddingRight: "8px",
-  overflow: "hidden",
+  margin: 0
 };
+
+const descriptionStyle = {
+  margin: 0,
+  textAlign: "center",
+};
+
+const textStyle = {
+  paddingRight: "8px",
+  width: "100%",
+  flex: 1,
+}
 
 export default Link;
