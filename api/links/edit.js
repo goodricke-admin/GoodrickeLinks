@@ -10,9 +10,9 @@ export default async function handler(req, res) {
     const client = await getClient();
     const collection = client.db("GoodrickeLinks").collection("links");
 
-    const { title, description, url, imageUrl } = req.body;
+    const { title, description, url, imageUrl, priority } = req.body;
 
-    const result = await collection.replaceOne({ "_id": new ObjectId(req.body.id) }, { title, description, url, imageUrl });
+    const result = await collection.replaceOne({ "_id": new ObjectId(req.body.id) }, { title, description, url, imageUrl, priority });
 
     console.log(result);
 

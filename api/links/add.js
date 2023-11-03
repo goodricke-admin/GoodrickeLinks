@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     const client = await getClient();
     const collection = client.db("GoodrickeLinks").collection("links");
 
-    const { title, description, url, imageUrl } = req.body;
-    const doc = { title, description, url, imageUrl };
+    const { title, description, url, imageUrl, priority } = req.body;
+    const doc = { title, description, url, imageUrl, priority };
 
     await collection.insertOne(doc);
     res.status(200).json(doc);

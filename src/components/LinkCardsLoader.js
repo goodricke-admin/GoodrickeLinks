@@ -29,6 +29,7 @@ export default function LinkCardsLoader({ password }) {
                   description: item.description || "",
                   url: item.url || "",
                   imageUrl: item.imageUrl || "",
+                  priority: item.priority || 0,
                   _id: item._id
                 };
                 return <LinkEditor key={item._id} linkData={linkData} password={password} />;

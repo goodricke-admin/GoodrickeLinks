@@ -69,6 +69,11 @@ export default function LinkEditor({ linkData, password }) {
                     setData({ ...data, imageUrl: e.target.value });
                     setDirty(true);
                 }} id={"image-url-input-" + data._id} />
+                <label htmlFor={"priority-input" + data._id}>Priority <span style={hintStyle}>(higher = higher on page; negatives & decimals allowed)</span></label>
+                <input type="number" value={data.priority} onChange={e => {
+                    setData({ ...data, priority: e.target.valueAsNumber });
+                    setDirty(true);
+                }} id={"priority-input-" + data._id} />
             </form>
 
             Preview
@@ -107,6 +112,7 @@ export default function LinkEditor({ linkData, password }) {
                             description: data.description,
                             url: sanitiseUrl(data.url),
                             imageUrl: data.imageUrl,
+                            priority: data.priority,
                             password
                         })
                     });
